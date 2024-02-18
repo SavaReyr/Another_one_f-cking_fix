@@ -15,11 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from api.views import UpdateShop, BasketView, ProductInfoView, LoginAccountView
+from api.views import UpdateShop, BasketView, ProductInfoView
+from rest_framework import routers
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('shop/update', UpdateShop.as_view()),
     path('basket', BasketView.as_view()),
     path('products', ProductInfoView.as_view()),
+
 ]

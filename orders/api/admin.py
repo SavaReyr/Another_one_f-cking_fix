@@ -1,10 +1,8 @@
 from django.contrib import admin
-from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
-from models import User, Shop, Product, Category, ProductParameter, ProductInfo, Parameter, OrderItem, Order, \
-    Contact, ConfirmEmailToken
 
+from api.models import User, Shop, Product, Category, ProductParameter, ProductInfo, Parameter, OrderItem, Order, Contact, ConfirmEmailToken
 
 @admin.register(User)
 class CustomUserAdmin(UserAdmin):
@@ -104,3 +102,6 @@ class ConfirmEmailTokenAdmin(admin.ModelAdmin):
     search_fields = ('user',)
     list_filter = ('created_at',)
 # Register your models here.
+
+admin.site.site_title = 'Админ-панель Сервис заказа товаров для розничных сетей'
+admin.site.site_header = 'Админ-панель Сервис заказа товаров для розничных сетей'

@@ -68,6 +68,10 @@ class UpdateShop(CustomAPIView):
                 return Response({'status':'Error', 'message': exc})
         return Response({'status':'OK'})
 
+
+
+
+
 class BasketView(CustomAPIView):
 
     permission_classes = {
